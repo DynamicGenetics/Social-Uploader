@@ -1,0 +1,46 @@
+{% extends "dashboard/base.html" %}
+{% block title %}{% block head_title %}Dashboard{% endblock head_title %}{% endblock title %}
+
+{% block content %}
+
+  <div class="container-fluid">
+    <h1>Dashboard</h1>
+
+    <p>Welcome to your personal dashboard for the Mood Music study! There are three steps below that you need to complete to begin with.
+  
+    <p>You can review the Participant Information Sheet at any time by <a href="{% url 'about' %}">clicking on this link.</a></p>
+      
+    <!--STUDY IS FINISHED-->
+    <div class="row">
+
+      <div class="col-sm-6 col-md-6">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Complete Final Surveys</h5>
+                  <p class="card-text"><font-weight-lighter class="text-muted">
+                    Two final surveys about your mental health and wellbeing. The link will take
+                    you to another website to do them.</font-weight-lighter>
+                  </p>
+                    <a href="{% url 'dashboard:index' %}" class="btn btn-primary stretched-link">Do the surveys</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-sm-6 col-md-6">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">Download Your Spotify User Data</h5>
+                      <p class="card-text"><font-weight-lighter class="text-muted">
+                        Here you will find instructions on how to download your data from Spotify and the upload box.
+                      </font-weight-lighter></p>
+                      <a href="{% url 'dashboard:datadrop' %}" class="btn btn-primary stretched-link">Upload my Spotify data</a>
+                  </div>
+            </div>
+      </div>
+      
+    </div>
+
+  </div> <!--container-->
+
+
+{% endblock %}
