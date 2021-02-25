@@ -80,15 +80,11 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "bootstrapform",
     "social_django",
-    "phonenumber_field",
-    "django_apscheduler",
 ]
 
 LOCAL_APPS = [
     "socialupload.users.apps.UsersConfig",
     "socialupload.dashboard.apps.DashboardConfig",
-    "socialupload.ema.apps.EmaConfig",
-    "socialupload.music.apps.MusicConfig"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -288,35 +284,6 @@ ACCOUNT_ADAPTER = "socialupload.users.adapters.AccountAdapter"
 # Customised forms
 ACCOUNT_FORMS = {"signup": "users.forms.CustomSignupForm"}
 
-
-# Social Django App Settings
-# ------------------------------------------------------------------------------
-SOCIAL_AUTH_URL_NAMESPACE = "social"
-SOCIAL_AUTH_POSTGRES_JSONFIELD = True
-
-# This is going to be a problem...? We have two LOGIN_REDIRECT_URLs
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/dashboard/thanks/"
-SOCIAL_AUTH_STRATEGY = "social_django.strategy.DjangoStrategy"
-SOCIAL_AUTH_STORAGE = "social_django.models.DjangoStorage"
-
-SOCIAL_AUTH_PIPELINE = (
-    "social_core.pipeline.social_auth.social_details",
-    "social_core.pipeline.social_auth.social_uid",
-    "social_core.pipeline.social_auth.auth_allowed",
-    "social_core.pipeline.social_auth.social_user",
-    "social_core.pipeline.user.get_username",
-    "social_core.pipeline.user.create_user",
-    "social_core.pipeline.social_auth.associate_user",
-    "social_core.pipeline.social_auth.load_extra_data",
-    "social_core.pipeline.user.user_details",
-)
-
-SOCIAL_AUTH_SPOTIFY_KEY = os.environ["SPOTIFY_CLIENT_ID"]
-SOCIAL_AUTH_SPOTIFY_SECRET = os.environ["SPOTIFY_CLIENT_SECRET"]
-SOCIAL_AUTH_SPOTIFY_SCOPE = ["user-read-recently-played", "user-library-read"]
-
-# For PhoneNumberWidget to work
-PHONENUMBER_DEFAULT_REGION = "GB"
 
 # For pre-save user signal
 MAX_USERS = 150
