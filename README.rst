@@ -15,11 +15,11 @@ Social Media Data Uploader
 This Django project has been built to allow a user to upload their self-requested social media data. 
 The data is then stored against their user ID. 
 
-Features currently include:
-- Study consent form
-- User sign up via email with email authentication
-- Upload feature for Spotify data. 
+Features currently include:  
+- Study consent form  
+- User sign up via email with email authentication  
+- Upload feature for Spotify data.  
 
-In development:
-- Upload feature for Facebook and Instagram data. 
-- Option to invite participants to upload via a unique link. 
+In development:  
+- Upload feature for Facebook and Instagram data.  
+- Option to invite participants to upload via a unique link.  
